@@ -5094,8 +5094,81 @@ body:has(#editor.open) #publicSite #dnTranslateFallbackWrap{
   #publicSite #dnAutoTranslateMount,
   #publicSite #dnTranslateFallbackWrap{animation:none!important;transition:none!important}
 }
+</style><style id="dn-v1018-persistent-language-control">
+/* The page's language switcher must never depend on the remote widget's display state. */
+#publicSite #dnTranslateFallbackWrap,
+body.dn-gtranslate-ready #publicSite #dnTranslateFallbackWrap {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  position: fixed !important;
+  z-index: 2147483000 !important;
+  left: max(12px, env(safe-area-inset-left, 0px)) !important;
+  bottom: calc(54px + env(safe-area-inset-bottom, 0px)) !important;
+  top: auto !important;
+  right: auto !important;
+  width: auto !important;
+  max-width: min(210px, 58vw) !important;
+  min-height: 48px;
+  padding: 0 4px !important;
+  border-radius: 999px !important;
+  background: #f2c45e !important;
+  color: #152337 !important;
+  border: 1px solid rgba(255,255,255,.28) !important;
+  box-shadow: 0 8px 26px rgba(0,0,0,.22) !important;
+  -webkit-tap-highlight-color: transparent;
+}
+#publicSite #dnTranslateFallbackWrap #dnGTranslateFallback {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  width: auto !important;
+  max-width: min(200px, 55vw) !important;
+  min-height: 48px !important;
+  color: #132338 !important;
+  background: transparent !important;
+  font: 800 14px/1.15 system-ui, sans-serif !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  padding: 0 12px !important;
+  cursor: pointer !important;
+}
+#publicSite #dnTranslateFallbackWrap #dnGTranslateFallback:focus-visible {
+  outline: 3px solid white !important;
+  outline-offset: 2px !important;
+}
+/* GTranslate remains available as a translation engine, never as a competing floating UI. */
+#publicSite #dnAutoTranslateMount,
+body.dn-gtranslate-ready #publicSite #dnAutoTranslateMount {
+  position: fixed !important;
+  left: -9999px !important;
+  top: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  max-width: 1px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+/* The editor has a separate language preview; avoid duplicate controls while editing. */
+body:has(#editor.open) #publicSite #dnTranslateFallbackWrap,
+#previewFrame #dnTranslateFallbackWrap {display: none !important}
+@media (max-width: 560px) {
+  #publicSite #dnTranslateFallbackWrap,
+  body.dn-gtranslate-ready #publicSite #dnTranslateFallbackWrap {
+    bottom: calc(54px + env(safe-area-inset-bottom, 0px)) !important;
+    left: max(12px, env(safe-area-inset-left, 0px)) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #publicSite #dnTranslateFallbackWrap {animation: none !important;transition: none !important}
+}
 </style><style data-dn-unified-background-runtime="true">#publicSite > main{--dn-unified-page:#f4f3ef;--dn-unified-pad-desktop:64px;--dn-unified-pad-mobile:24px;background-color:#f4f3ef!important;background-image:linear-gradient(to bottom,rgba(255,255,255,0.400) -96px,rgba(249,250,251,0.400) 69px,rgba(238,240,244,0.400) 233px,rgba(227,230,237,0.400) 389px,rgba(238,240,244,0.400) 544px,rgba(249,250,251,0.400) 708px,rgba(255,255,255,0.400) 873px)!important;}
-#previewFrame > main{--dn-unified-page:#101725;--dn-unified-pad-desktop:64px;--dn-unified-pad-mobile:24px;background-color:#101725!important;background-image:linear-gradient(to bottom,rgba(21,30,45,0.400) 805px,rgba(28,37,53,0.400) 936px,rgba(40,50,67,0.400) 1067px,rgba(52,63,82,0.400) 1191px,rgba(40,50,67,0.400) 1315px,rgba(28,37,53,0.400) 1446px,rgba(21,30,45,0.400) 1577px)!important;}</style><style class="gtranslate_css"></style><style id="themeTogglePreviewStyle">#themeToggleDemo{--theme-toggle-bg:#f2c45e;--theme-toggle-text:#101c31;background:var(--theme-toggle-bg)!important;color:var(--theme-toggle-text)!important;font-size:14px!important;padding:12px 18px!important;animation:none!important}</style><style>
+#previewFrame > main{--dn-unified-page:#101725;--dn-unified-pad-desktop:64px;--dn-unified-pad-mobile:24px;background-color:#101725!important;background-image:linear-gradient(to bottom,rgba(21,30,45,0.400) -79px,rgba(27,36,52,0.400) 52px,rgba(37,47,64,0.400) 183px,rgba(48,59,77,0.400) 307px,rgba(37,47,64,0.400) 431px,rgba(27,36,52,0.400) 562px,rgba(21,30,45,0.400) 693px)!important;}</style><style class="gtranslate_css"></style><style id="themeTogglePreviewStyle">#themeToggleDemo{--theme-toggle-bg:#f2c45e;--theme-toggle-text:#101c31;background:var(--theme-toggle-bg)!important;color:var(--theme-toggle-text)!important;font-size:14px!important;padding:12px 18px!important;animation:none!important}</style><style>
   .translated-ltr{
       direction: ltr;
       text-align: left;
@@ -5131,7 +5204,7 @@ body:has(#editor.open) #publicSite #dnTranslateFallbackWrap{
 </div>
 <div class="hero-mark" data-dn-i18n="{&quot;uk&quot;:&quot;Культура · Спільнота · Діалог&quot;}" data-dn-i18n-base-html="Культура · Спільнота · Діалог" data-dn-i18n-original="Культура · Спільнота · Діалог" data-mobile-drag-x="0px" data-mobile-drag-y="10px" data-text="heroFoot" style="position: relative; cursor: text; z-index: 2 !important; --mobile-drag-x: 0px; --mobile-drag-y: 10px;">Культура · Спільнота · Діалог</div>
 </div></div>
-<div class="independent-field" data-auto-fit-responsive="true" data-dn-wash-id="wash-xw3hx72006" data-fit-h="0.12566721708075726" data-fit-w="0.6280152027027027" data-fit-x="0.3666131756756757" data-fit-y="0.07472831304481395" data-independent="true" data-independent-field="true" data-label="Порожнє поле на фоні" data-layer-host="section" data-layout-fit-key="anchor-2" data-mobile-fit-h="0.4783544606553456" data-mobile-fit-w="1.0599902849740932" data-mobile-fit-x="-0.03003562176165803" data-mobile-fit-y="0" data-mobile-layout-fit-key="anchor-1" data-mobile-z-index="2" data-responsive-position="true" style="z-index: 0; --editor-layer: 0; display: block; background: color-mix(in srgb,var(--gold) 16%,transparent); border: 1px solid var(--gold); border-radius: 12px; opacity: 1; --mobile-z-index: 2; position: absolute !important; left: 540.754px !important; top: 161.358px !important; width: 926.322px !important; height: 111.591px !important; box-sizing: border-box !important;"></div></section>
+<div class="independent-field" data-auto-fit-responsive="true" data-dn-wash-id="wash-xw3hx72006" data-fit-h="0.12566721708075726" data-fit-w="0.6280152027027027" data-fit-x="0.3666131756756757" data-fit-y="0.07472831304481395" data-independent="true" data-independent-field="true" data-label="Порожнє поле на фоні" data-layer-host="section" data-layout-fit-key="anchor-2" data-mobile-fit-h="0.4783544606553456" data-mobile-fit-w="1.0599902849740932" data-mobile-fit-x="-0.03003562176165803" data-mobile-fit-y="0" data-mobile-layout-fit-key="anchor-1" data-mobile-z-index="2" data-responsive-position="true" style="z-index: 0; --editor-layer: 0; display: block; background: color-mix(in srgb,var(--gold) 16%,transparent); border: 1px solid var(--gold); border-radius: 12px; opacity: 1; --mobile-z-index: 2; position: absolute !important; left: 2.40625px !important; top: 110px !important; width: 409.156px !important; height: 258.326px !important; box-sizing: border-box !important;"></div></section>
 <section class="about" data-about-rebuilt="true" data-dn-wash-disabled="true" data-dn-wash-id="wash-fccps3844w" data-label="Про організацію" data-layout-fit-target-key="anchor-6" data-mobile-bg-color="#ffffff" data-mobile-bg-opacity="100" data-mobile-drag-x="0px" data-mobile-drag-y="-25px" id="about" style="cursor: pointer; --mobile-drag-x: 0px; --mobile-drag-y: -25px; --mobile-bg-color: rgba(255,255,255,1);">
 <div class="wrap about-layout">
 <div class="about-card dn-background-target" data-dn-about-contrast-v66="true" data-dn-card-surface="true" data-dn-card-text="true" data-dn-theme-migrated-v70="true" data-label="Картка «Хто ми»" data-layout-fit-target-key="anchor-7" data-theme-bg="true" style="--dn-light-bg: #ffffff; --dn-dark-bg: #172438; --dn-card-text-light: #172033; --dn-card-text-dark: #eef2f9;"><div class="eyebrow" data-dn-i18n="{&quot;uk&quot;:&quot;ХТО МИ&quot;}" data-dn-i18n-base-html="Хто ми" data-dn-i18n-original="ХТО МИ" data-mobile-drag-x="0px" data-mobile-drag-y="10px" data-text="aboutEyebrow" data-theme-text="true" style="z-index: 2; cursor: text; --mobile-drag-x: 0px; --mobile-drag-y: 10px; position: relative !important; --dn-light-text: #172033; --dn-dark-text: #eef2f8;">Хто ми</div><h2 class="" data-dn-i18n="{&quot;uk&quot;:&quot;Україна поруч, де б ми не були.&quot;}" data-dn-i18n-base-html="Україна поруч, де б ми не були." data-dn-i18n-original="Україна поруч, де б ми не були." data-text="aboutTitle" data-theme-bg="true" data-theme-text="true" style="cursor: text; z-index: 2; position: relative !important; --dn-light-text: #172033; --dn-light-bg: #ffffff; --dn-dark-text: #eef2f8; --dn-dark-bg: #172438;">Україна поруч, де б ми не були.</h2><p class="" data-dn-i18n="{&quot;uk&quot;:&quot;Ми — культурна спільнота, що підтримує українську мову, традиції та сучасне мистецтво, знайомить хорватських друзів з Україною й допомагає людям відчувати себе частиною громади.&quot;}" data-dn-i18n-base-html="Ми — культурна спільнота, що підтримує українську мову, традиції та сучасне мистецтво, знайомить хорватських друзів з Україною й допомагає людям відчувати себе частиною громади." data-dn-i18n-original="Ми — культурна спільнота, що підтримує українську мову, традиції та сучасне мистецтво, знайомить хорватських друзів з Україною й допомагає людям відчувати себе частиною громади." data-text="aboutP1" style="cursor: text; position: relative !important; z-index: 2;">Ми — культурна спільнота, що підтримує українську мову, традиції та сучасне мистецтво, знайомить хорватських друзів з Україною й допомагає людям відчувати себе частиною громади.</p><p class="" data-dn-i18n="{&quot;uk&quot;:&quot;Через події, творчість, освіту й особисті зустрічі ми будуємо міст між Україною та Хорватією.&quot;}" data-dn-i18n-base-html="Через події, творчість, освіту й особисті зустрічі ми будуємо міст між Україною та Хорватією." data-dn-i18n-original="Через події, творчість, освіту й особисті зустрічі ми будуємо міст між Україною та Хорватією." data-text="aboutP2" style="cursor: text; position: relative !important; z-index: 2;">Через події, творчість, освіту й особисті зустрічі ми будуємо міст між Україною та Хорватією.</p>
@@ -5882,112 +5955,91 @@ function route(){const id=location.hash.slice(1);const page=id.startsWith('page-
 
 
 
-/* v10.17 — official GTranslate widget selector, visible and directly operable.
-   Canonical text is Ukrainian; no manually stored translations are involved.
-   Fallback uses Google's web page translator when third-party JavaScript is blocked. */
+/* v10.18: persistent language selector, with provider and reliable external fallback. */
 (function(){
   'use strict';
   const site=document.getElementById('publicSite');
   if(!site)return;
   const mount=site.querySelector('#dnAutoTranslateMount');
   const fallback=site.querySelector('#dnGTranslateFallback');
-  const noticeId='dnAutoTranslateNotice';
   const codes=['uk','hr','en'];
-  const langNames={uk:'Українська',hr:'Hrvatski',en:'English'};
+  const labels={uk:'Українська',hr:'Hrvatski',en:'English'};
+  // Leave the original site and editor text Ukrainian; only the remote provider translates.
   const editor=document.getElementById('editor');
   if(editor){editor.classList.add('notranslate');editor.setAttribute('translate','no');}
-  const frame=document.getElementById('previewFrame');
-  if(frame){frame.classList.add('notranslate');frame.setAttribute('translate','no');}
-  function message(text,link){
-    let el=document.getElementById(noticeId);
-    if(!el){el=document.createElement('div');el.id=noticeId;el.setAttribute('role','status');el.className='notranslate';el.setAttribute('translate','no');document.body.appendChild(el);}
-    el.replaceChildren(document.createTextNode(text));
-    if(link){const a=document.createElement('a');a.textContent=' Google Translate';a.target='_blank';a.rel='noopener noreferrer';a.href=link;el.appendChild(a);}
-    el.hidden=false;
-    clearTimeout(el._dnNoticeTimeout);
-    el._dnNoticeTimeout=setTimeout(()=>{el.hidden=true;},9000);
+  const preview=document.getElementById('previewFrame');
+  if(preview){preview.classList.add('notranslate');preview.setAttribute('translate','no');}
+  function googleUrl(lang){
+    const page=new URL(location.href);
+    page.searchParams.delete('googtrans');
+    return 'https://translate.google.com/translate?sl=uk&tl='+encodeURIComponent(lang)+'&u='+encodeURIComponent(page.toString());
   }
-  function urlFor(lang){
-    const clean=new URL(location.href);
-    clean.hash='';
-    return 'https://translate.google.com/translate?sl=uk&tl='+encodeURIComponent(lang)+'&u='+encodeURIComponent(clean.toString());
+  function providerSelect(){
+    return mount?.querySelector('select.gt_selector, select')||null;
   }
-  function nativeControl(){
-    if(!mount)return null;
-    return mount.querySelector('select.gt_selector, select, .gt_selected, a.glink, [data-gt-lang]');
+  function setProviderLanguage(lang){
+    const select=providerSelect();
+    if(!select || !select.options || select.options.length<2)return false;
+    const option=Array.from(select.options).find(o=>o.value===lang||o.value.endsWith('|'+lang));
+    if(!option)return false;
+    try{
+      select.value=option.value;
+      select.dispatchEvent(new Event('change',{bubbles:true}));
+      return true;
+    }catch(e){return false;}
   }
-  function ready(){
-    const ok=!!nativeControl();
-    document.body.classList.toggle('dn-gtranslate-ready',ok);
-    return ok;
+  function openGoogle(lang){
+    if(!/^https?:$/.test(location.protocol)){
+      window.alert('Автоматичний переклад доступний на опублікованому сайті (HTTPS).');
+      return;
+    }
+    location.assign(googleUrl(lang));
   }
-  function fallbackTranslation(lang){
+  function changeLanguage(lang){
+    if(!codes.includes(lang))return;
     if(lang==='uk'){
-      // The free widget may keep the translated text until a language reload.
-      if(location.protocol==='https:'||location.protocol==='http:'){
-        const clean=new URL(location.href);clean.searchParams.delete('lang');
+      // Use the provider if translation was active, otherwise show the original site.
+      if(setProviderLanguage('uk')){site.dataset.dnActiveLang='uk';document.documentElement.lang='uk';return;}
+      if(location.protocol==='http:'||location.protocol==='https:'){
+        const clean=new URL(location.href);
+        clean.searchParams.delete('googtrans');
         location.assign(clean.toString());
       }
       return;
     }
-    if(!/^https?:$/.test(location.protocol)){
-      message('Автоматичний переклад доступний на опублікованому сайті. Відкрийте сайт через HTTPS.');
+    if(setProviderLanguage(lang)){
+      site.dataset.dnActiveLang=lang;
+      document.documentElement.lang=lang;
       return;
     }
-    // Google Translate can fetch the public GitHub Pages URL without exposing an API key.
-    // Clicking is a direct user gesture so navigation is permitted in mobile browsers.
-    location.assign(urlFor(lang));
+    // The free widget sometimes does not load inside mobile in-app browsers.
+    // A real Google Translate website link is used instead of a silent no-op.
+    openGoogle(lang);
   }
   if(fallback){
     fallback.addEventListener('change',e=>{
-      const lang=e.target.value;
-      // Never mark an untranslated page as Croatian or English.
-      e.target.value='uk';
-      if(ready())return;
-      fallbackTranslation(lang);
+      const lang=e.currentTarget.value;
+      // Keep the selector at UA until actual provider translation has started.
+      if(!providerSelect())e.currentTarget.value='uk';
+      changeLanguage(lang);
     });
   }
-  function updateStatus(){
-    const ok=ready();
-    if(ok)document.documentElement.dataset.dnTranslationProvider='ready';
-    else document.documentElement.dataset.dnTranslationProvider='fallback';
-  }
-  updateStatus();
-  if(mount){
-    new MutationObserver(updateStatus).observe(mount,{subtree:true,childList:true});
-  }
-  document.addEventListener('change',e=>{
-    if(!mount || !mount.contains(e.target))return;
-    const sel=e.target;
-    if(sel.tagName!=='SELECT')return;
-    const value=sel.value||'';
-    const lang=codes.find(k=>value===k||value.endsWith('|'+k))||'uk';
-    site.dataset.dnActiveLang=lang;
-    document.documentElement.lang=lang;
-  },true);
-  // Existing language buttons are hidden when the native/fallback chooser is displayed.
-  // Keep this function for legacy editor components. Do not fake a language change.
+  // Compatibility for legacy floating buttons without marking untranslatable text as translated.
   window.dnAutoTranslateSwitch=function(code){
     const lang=codes.includes(code)?code:'uk';
-    const sel=mount?.querySelector('select.gt_selector, select');
-    if(sel){
-      const opt=Array.from(sel.options).find(o=>o.value===lang||o.value.endsWith('|'+lang));
-      if(opt){sel.value=opt.value;sel.dispatchEvent(new Event('change',{bubbles:true}));return true;}
-    }
-    if(lang!=='uk'){
-      const link=(location.protocol==='https:'||location.protocol==='http:')?urlFor(lang):null;
-      message('Для перекладу на '+langNames[lang]+' використайте автоматичний перекладач:',link);
-    }
-    return false;
+    changeLanguage(lang);
+    return true;
   };
-  // Should the external script fail entirely, keep a working public fallback.
-  const cdn=document.getElementById('dnGTranslateExternalScript');
-  if(cdn)cdn.addEventListener('error',()=>{
-    document.body.classList.remove('dn-gtranslate-ready');
-    document.documentElement.dataset.dnTranslationProvider='fallback';
-  });
-  setTimeout(updateStatus,2500);
-  setTimeout(updateStatus,6000);
+  // Always keep the static selector visible; neither remote readiness nor error hides it.
+  document.documentElement.dataset.dnTranslationProvider='persistent';
+  const external=document.getElementById('dnGTranslateExternalScript');
+  if(external){
+    external.addEventListener('error',()=>{document.documentElement.dataset.dnTranslationProvider='fallback';});
+  }
+  if(fallback){
+    fallback.setAttribute('title','Перекласти сайт · UA / HR / EN');
+    fallback.setAttribute('aria-label','Мова сайту: українська, хорватська або англійська');
+  }
 })();
 
 
